@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1d1d1d;
+    font-family: "Nerko One", cursive;
+    color: #ad7835;
+}
+header {
+
+    color: red;
+}
+
+header a {
+    color: green;
+}
+
+header a:hover {
+    opacity: 0.5;
+
+}
+
+header a:visited{
+    color: green;
+}
+
+main {
+    height: auto;
+    width: 1000px;
+
+    margin: auto;
+    position: absolute;
+    top: 180%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+
+}
+main h1 {
+    font-size: 36px;
+}
+
+
+
+
+section {
+    height: auto;
+    width: 900px;
+    background-color: #373737;
+    color: rgba(255, 255, 255, 0.918);
+    border: 3px outset #ad7835;
+    margin-left: 30px;
+    margin-bottom: 100px;
+}
+
+
+.contain_section {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+section h2 {
+    font-size: 25px;
+    letter-spacing: 3px;
+    text-decoration: underline;
+}
+section h3 {
+    letter-spacing: 3px;
+}
+
+section mark {
+    background-color: #1d1d1d;
+    color: white;
+    border: 1px solid #ad7835;
+}
+
+.request_api {
+    letter-spacing: 2px;
+    background-color: #1d1d1d;
+    border: 1px solid #ad7835;
+    width: 500px;
+    color: #ad7835;
+}
+
+.request_api p {
+    margin-left: 10px;
+}
+
+.request_api span {
+    padding-left: 30px;
+}
+.request_api b {
+    color: green;
+}
+.request_api big {
+    color: white;
+}
+
+table {
+    border-color: #ad7835;
+}
+
+table th {
+    background-color: #1d1d1d;
+    color: #ad7835;
+}

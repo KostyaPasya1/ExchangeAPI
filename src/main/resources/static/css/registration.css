@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1d1d1d;
+    font-family: "Nerko One", cursive;
+    color: #ad7835;
+}
+
+.container {
+    width: 450px;
+    height: 400px;
+    background-color: #373737;
+    margin: 200px auto 0 auto;
+    text-align: center;
+    padding-bottom: 20px;
+    border: 3px outset #ad7835;
+}
+
+input[type="text"],
+input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #ad7835;
+    background-color: #373737;
+    color: white;
+
+    width: 300px;
+    height: 50px;
+    font-size: 18px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    padding-left: 40px;
+    margin-top: 10px;
+}
+
+input[type="text"]::placeholder {
+    color: white;
+}
+input[type="password"]::placeholder {
+    color: white;
+}
+
+.dws-input input:hover {
+    box-shadow: 0 0 6px 3px rgba(182, 129, 51, 0.767);
+}
+
+.dws-input:first-child {
+    padding-top: 30px;
+
+}
+
+.dws-submit {
+    margin-top: 20px;
+
+    width: 130px;
+    height: 57px;
+    border: 1px solid #ad7835;
+    background-color: #373737;
+
+    font-family: "Nerko One", cursive;
+    color: #ad7835;
+    font-size: 20px;
+    line-height: 28px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.dws-submit:hover {
+    transform: scale(1.2);
+}
+
+.container a {
+    color: white;
+}
+.container a:hover {
+    opacity: 0.5;
+}
+.volid {
+    opacity: 0.5;
+}

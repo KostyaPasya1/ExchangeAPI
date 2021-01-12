@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/greeting.css" />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap"
+            rel="stylesheet"
+    />
+    <title>Document</title>
+</head>
+<body>
+<header>
+    <p>Что бы пользоваться API надо <a href="/registration"> зарегистрироваться</a>
+        или <a href="/login">войти</a> на сайт!</p>
+    Вы вошли на сайт под именем: <span th:text="${authName}"></span>
+
+
+
+</header>
+<main>
+    <h1>Endpoint: /exchange</h1>
+    <section >
+        <div class="contain_section">
+            <p>
+                <mark>exchange</mark> endpoint возвращает сумму в целевой валюте,
+                после конвертации исходной валюты.
+            </p>
+            <h3>Запрос к API:</h3>
+            <div class="request_api">
+                <p>
+                    http : //localhost:8080/api/ exchange <br />
+                    <span>? from = RUB<br /></span>
+                    <span>& value = 10000<br /></span>
+                    <span>& to = USD</span>
+                </p>
+            </div>
+            <h3>Параметры запросса:</h3>
+            <table border="1" width="100%" cellpadding="5">
+                <tr>
+                    <th>Параметр</th>
+                    <th>Описание</th>
+                </tr>
+                <tr>
+                    <td><u>from</u></td>
+                    <td>Введите трехбуквенный код предпочитаемой базовой валюты.</td>
+                </tr>
+                <tr>
+                    <td><u>value</u></td>
+                    <td>Введите объем конвертируемой валюты.</td>
+                </tr>
+                <tr>
+                    <td><u>to</u></td>
+                    <td>Введите трехбуквенный код предпочитаемой целевой валюты.</td>
+                </tr>
+            </table>
+            <h3>Ответ API:</h3>
+            <div class="request_api">
+                <p>
+                    <big>{</big> "id" : <b>26</b>, "result" : <b>136.474246 </b
+                ><big>}</big>
+                </p>
+            </div>
+            <h3>Объекты ответа:</h3>
+            <table border="1" width="100%" cellpadding="5">
+                <tr>
+                    <th>Объект ответа</th>
+                    <th>Описание</th>
+                </tr>
+                <tr>
+                    <td><u>id</u></td>
+                    <td>Возвращает id запроса.</td>
+                </tr>
+                <tr>
+                    <td><u>result</u></td>
+                    <td>Возвращает объем денежно массы в целевой валюте.</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <h1>Endpoint: /stats/oneEx</h1>
+    <section >
+        <div class="contain_section">
+            <p>
+                <mark>oneEx</mark> endpoint предоставляет информацию о пользователях
+                запросивших конвертацию больше {more} $ за один запрос.
+            </p>
+            <h3>Запрос к API:</h3>
+            <div class="request_api">
+                <p>
+                    http : //localhost:8080/api/ stats / oneEx <br />
+                    <span>? more = 100000</span>
+                </p>
+            </div>
+            <h3>Параметры запросса:</h3>
+            <table border="1" width="100%" cellpadding="5">
+                <tr>
+                    <th>Параметр</th>
+                    <th>Описание</th>
+                </tr>
+                <tr>
+                    <td><u>more</u></td>
+                    <td>
+                        Введите целочисленное значение, до какой суммы (в долларах),
+                        будет проводиться отбор пользователей.
+                    </td>
+                </tr>
+            </table>
+            <h3>Ответ API:</h3>
+            <div class="request_api">
+                <p>
+                    <big>{</big> "users" : [ <b>"Roma","Vasya","Kolya"</b> ]
+                    <big>}</big>
+                </p>
+            </div>
+            <h3>Объекты ответа:</h3>
+            <table border="1" width="100%" cellpadding="5">
+                <tr>
+                    <th>Объект ответа</th>
+                    <th>Описание</th>
+                </tr>
+                <tr>
+                    <td><u>users</u></td>
+                    <td>
+                        Возвращает пользователей запросивших конвертацию больше {more} $
+                        за один запрос.
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <h1>Endpoint: /stats/sumEx</h1>
+    <section >
+        <div class="contain_section">
+            <p>
+                <mark>sumEx</mark> endpoint предоставляет информацию о пользователях
+                у которых суммарный запрошенный объём конвертации валюты больше
+                {more} $.
+            </p>
+            <h3>Запрос к API:</h3>
+            <div class="request_api">
+                <p>
+                    http : //localhost:8080/api/ stats / sumEx <br />
+                    <span>? more = 100000</span>
+                </p>
+            </div>
+            <h3>Параметры запросса:</h3>
+            <table border="1" width="100%" cellpadding="5">
+                <tr>
+                    <th>Параметр</th>
+                    <th>Описание</th>
+                </tr>
+                <tr>
+                    <td><u>more</u></td>
+                    <td>
+                        Введите целочисленное значение, до какой суммы (в долларах),
+                        будет проводиться отбор пользователей.
+                    </td>
+                </tr>
+            </table>
+            <h3>Ответ API:</h3>
+            <div class="request_api">
+                <p>
+                    <big>{</big> "users" : [ <b>"Roma","Vasya","Kolya"</b> ]
+                    <big>}</big>
+                </p>
+            </div>
+            <h3>Объекты ответа:</h3>
+            <table border="1" width="100%" cellpadding="5">
+                <tr>
+                    <th>Объект ответа</th>
+                    <th>Описание</th>
+                </tr>
+                <tr>
+                    <td><u>users</u></td>
+                    <td>
+                        Возвращает пользователей у которых суммарный запрошенный объём
+                        конвертации валюты больше {more} $.
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <h1>Endpoint: /stats/popCur</h1>
+    <section>
+        <div class="contain_section">
+            <p>
+                <mark>popCur</mark> endpoint предоставляет рейтинг валют, в которе
+                чаще всего конвертируют пользователи сайта.
+            </p>
+            <h3>Запрос к API:</h3>
+            <div class="request_api">
+                <p>
+                    http : //localhost:8080/api/ stats / popCur <br />
+                </p>
+            </div>
+            <h3>Ответ API:</h3>
+            <div class="request_api">
+                <p>
+                    <big>{</big> "currency" : {
+                    <b>"USD":19,"JPY":4,"RUB":2,"GBP":1</b> } <big>}</big>
+                </p>
+            </div>
+            <h3>Объекты ответа:</h3>
+            <table border="1" width="100%" cellpadding="5">
+                <tr>
+                    <th>Объект ответа</th>
+                    <th>Описание</th>
+                </tr>
+                <tr>
+                    <td><u>currency</u></td>
+                    <td>
+                        Возвращает рейтинг валют, в которе
+                        чаще всего конвертируют пользователи сайта и частоту конвертаций каждой отдельной валюты.
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>

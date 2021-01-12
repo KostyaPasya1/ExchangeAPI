@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/registration.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <title>registration</title>
+</head>
+<body>
+<main>
+    <div class="container">
+        <form th:action="@{registration}" th:object="${User}" method="post">
+            <div class="dws-input">
+                <a class="volid" th:text="${usernameError}"></a>
+                <input
+                        placeholder="Логин"
+                        type="text"
+                        name="username"
+                        class="form-control"
+                />
+            </div>
+            <div class="dws-input">
+                <a class="volid" th:text="${passwordError}"></a>
+                <input
+                        placeholder="Пароль"
+                        type="password"
+                        name="password"
+                        class="form-control"
+                />
+            </div>
+            <div class="dws-input">
+                <input
+                        placeholder="Повторите пароль"
+                        type="password"
+                        name="passwordConfirm"
+                        class="form-control"
+                />
+            </div>
+
+
+            <form action="/" target="_blank">
+                <input class="dws-submit" type="submit" value="Sign in" />
+            </form>
+            <a href="/login">Войти</a>
+        </form>
+    </div>
+</main>
+</body>
+</html>
